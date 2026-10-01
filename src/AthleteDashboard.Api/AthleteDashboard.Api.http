@@ -1,0 +1,6 @@
+@AthleteDashboard.Api_HostAddress = http://localhost:5118
+
+GET {{AthleteDashboard.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "API",
+      "type": "dotnet",
+      "request": "launch",
+      "projectPath": "${workspaceFolder}/src/AthleteDashboard.Api/AthleteDashboard.Api.csproj"
+    },
+    {
+      "name": "Web",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "cd ${workspaceFolder}/src/AthleteDashboard.Web && npm run dev -- --host 0.0.0.0"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Run Full Stack",
+      "configurations": [
+        "API",
+        "Web"
+      ]
+    }
+  ]
+}

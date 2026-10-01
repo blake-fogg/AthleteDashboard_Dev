@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start API",
+      "type": "shell",
+      "command": "dotnet run --project ${workspaceFolder}/src/AthleteDashboard.Api/AthleteDashboard.Api.csproj",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Start Web",
+      "type": "shell",
+      "command": "npm run dev -- --host 0.0.0.0",
+      "options": {
+        "cwd": "${workspaceFolder}/src/AthleteDashboard.Web"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    }
+  ]
+}
