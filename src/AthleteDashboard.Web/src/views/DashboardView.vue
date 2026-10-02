@@ -5,12 +5,13 @@
     <q-table
       :rows="athletes"
       :columns="[
-        { name: 'athleteID', label: 'ID', field: 'athleteID', align: 'left' },
+        { name: 'athleteID', label: 'Athlete ID', field: 'athleteID', align: 'left' },
         { name: 'firstName', label: 'First Name', field: 'firstName', align: 'left' },
         { name: 'lastName', label: 'Last Name', field: 'lastName', align: 'left' }
       ]"
       row-key="athleteID"
       :pagination="{ rowsPerPage: 10 }"
+      dark
     />
 
   </div>
