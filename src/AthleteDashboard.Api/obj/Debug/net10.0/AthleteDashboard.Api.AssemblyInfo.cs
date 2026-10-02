@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AthleteDashboard.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85fdecc3f6a5cb7920ad1ac598e76809f0c1b8a7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8648411a2782d10fa7927dc2007d89549f66f23b")]
 [assembly: System.Reflection.AssemblyProductAttribute("AthleteDashboard.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AthleteDashboard.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

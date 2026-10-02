@@ -1,6 +1,7 @@
 using AthleteDashboard.Api.Data;
 using AthleteDashboard.Api.Services;
 using AthleteDashboard.Api.Repositories;
+using AthleteDashboard.Api.Models.Strava;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,13 +11,19 @@ builder.Services.AddOpenApi();
 builder.Services.AddScoped<SqlConnectionFactory>();
 builder.Services.AddScoped<AthleteRepository>();
 builder.Services.AddScoped<AthleteService>();
+builder.Services.AddHttpClient<StravaService>();
+builder.Services.Configure<StravaOptions>(builder.Configuration.GetSection("Strava"));
+builder.Services.AddHttpClient<StravaService>();
+builder.Services.Configure<StravaOptions>(builder.Configuration.GetSection("Strava"));
 
 builder.Services.AddControllers();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:5173", "http://127.0.0.1:5173")
+        // For local development, allow the frontend no matter which dev port it is running on.
+        // In production, replace this with your specific frontend origin(s).
+        policy.SetIsOriginAllowed(origin => true)
               .AllowAnyHeader()
               .AllowAnyMethod();
     });

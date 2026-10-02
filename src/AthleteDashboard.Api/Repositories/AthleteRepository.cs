@@ -19,14 +19,15 @@ public class AthleteRepository
             SELECT
                 AthleteID,
                 FirstName,
-                LastName
-            FROM dbo.Athletes
+                LastName,
+                StravaToken
+            FROM dbo.Athlete
             WHERE AthleteID = @AthleteID;
             """;
 
         using var connection = _connectionFactory.CreateConnection();
 
-        return await connection.QuerySingleOrDefaultAsync<Athlete?>(sql, new { AthleteID = athleteId });
+        return await connection.QuerySingleOrDefaultAsync<Athlete>(sql, new { AthleteID = athleteId });
     }
 
     public async Task<IEnumerable<Athlete>> GetAllAthletesAsync()
@@ -35,7 +36,8 @@ public class AthleteRepository
             SELECT
                 AthleteID,
                 FirstName,
-                LastName
+                LastName,
+                StravaToken
             FROM dbo.Athlete;
             """;
 
