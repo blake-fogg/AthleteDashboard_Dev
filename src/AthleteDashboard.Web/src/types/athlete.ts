@@ -1,5 +1,5 @@
 export interface Athlete {
-  AthleteID: number
-  FirstName: string
-  LastName: string
+  athleteID: number
+  firstName: string
+  lastName: string
 }
